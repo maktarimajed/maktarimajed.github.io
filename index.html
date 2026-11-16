@@ -303,6 +303,11 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24p
 .item h4{font-size:.94rem}
 .item p{font-size:.84rem}
 @media (max-width:960px){.more{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.more .item{flex:0 0 230px;scroll-snap-align:start}}
+.slapair{display:flex;justify-content:space-between;gap:16px;margin-top:10px}
+.slapair b{display:block;font-stretch:66%;font-weight:650;font-size:1.6rem;line-height:1;color:var(--bink)}
+.slapair div:last-child{text-align:right}
+.slapair div:last-child b{color:var(--bgold)}
+.slapair span{font-size:.8rem;color:var(--bmid)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -336,15 +341,15 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24p
       </div>
     </div>
     <div class="heroviz">
-      <div class="big">97%</div>
-      <p class="hcap">lower SLA miss rate as reported ticket volume grew significantly.</p>
+      <div class="big">97.5%</div>
+      <p class="hcap">Reduction in SLA misses</p>
       <svg class="spark" viewBox="0 0 300 80" role="img" aria-label="Share of tickets missing SLA by semester, from 28.1% to 0.7%">
   <line x1="0" y1="66" x2="300" y2="66" class="tgt"/>
   <text x="300" y="60" text-anchor="end" class="tgtl">5% target</text>
   <polyline points="0,6 42.9,26.6 85.7,40.6 128.6,40.8 171.4,49.2 214.3,50.4 257.1,66.5 300,69.4" class="ln"/>
   <circle cx="0" cy="6" r="3.5" class="pt0"/><circle cx="300" cy="69.4" r="4.5" class="pt"/>
 </svg>
-      <p class="vizcap"><span>Fall 2023 · 28% missed</span><span>Spring 2026 · 0.7%</span></p>
+      <div class="slapair"><div><b>28.1%</b><span>Fall 2023</span></div><div><b>0.7%</b><span>Spring 2026</span></div></div>
       <div class="total"><b>$200K+</b><span>in estimated savings and cost avoidance through smarter IT investments.</span></div>
     </div>
   </div>
