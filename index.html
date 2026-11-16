@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="IT operations and service delivery portfolio: measured results in SLA performance, hardware right-sizing, print services and procurement at Purdue University Fort Wayne.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Majed Maktari · IT Operations and Service Delivery">
+<meta property="og:description" content="IT operations and service delivery portfolio: measured results in SLA performance, hardware right-sizing, print services and procurement at Purdue University Fort Wayne.">
+<meta name="twitter:card" content="summary">
+<style>html,body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Majed Maktari Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..800;1,62..125,300..800&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
+<style>
+/* Layout: full-width bands. A deep forest hero states the thesis with a real chart, case studies each carry their own small visual, the dashboards prove it, and a dark band carries what colleagues say. */
+:root{
+  --paper:#eef1e8; --tile:#fbfcf8; --ink:#1a2a1f; --mid:#4f5c50; --light:#828e81; --line:#d3dacc; --hair:#e2e8dc;
+  --accent:#2f6b45; --gold:#b9781f; --warn:#b0612a; --ok:#6b8a2a; --bar:#c3cbb9;
+  --band:#173023; --band2:#1f3d2c; --bink:#eef3e8; --bmid:#a8baa9; --bline:#2f4c3b; --bacc:#9fd3a7; --bgold:#e8b665;
+  --f:"Archivo","Helvetica Neue",Arial,sans-serif; --q:"Newsreader",Georgia,serif;
+  --pad:max(16px,env(safe-area-inset-left,0px));
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111713; --tile:#172019; --ink:#e3e9dc; --mid:#a2ad9b; --light:#747e6e; --line:#2b352d; --hair:#1f2822;
+  --accent:#8cc29a; --gold:#e0a85a; --warn:#d8925a; --ok:#b3cc78; --bar:#3a443b;
+  --band:#0c1810; --band2:#132519; --bline:#24392b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111713; --tile:#172019; --ink:#e3e9dc; --mid:#a2ad9b; --light:#747e6e; --line:#2b352d; --hair:#1f2822;
+  --accent:#8cc29a; --gold:#e0a85a; --warn:#d8925a; --ok:#b3cc78; --bar:#3a443b;
+  --band:#0c1810; --band2:#132519; --bline:#24392b; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--ink);font-family:var(--f);font-size:clamp(.98rem,.95rem + .15vw,1.05rem);line-height:1.6;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--band)}
+.in{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{margin:0;font-weight:650;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+a{color:inherit;text-decoration-color:var(--accent);text-decoration-thickness:1.5px;text-underline-offset:3px}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.fig{font-stretch:66%;font-weight:650;letter-spacing:-.015em;line-height:.9}
+.mid{color:var(--mid)} .small{font-size:.86rem} .label{font-size:.82rem;color:var(--mid)}
+em.q{font-family:var(--q);font-style:italic;font-weight:500;letter-spacing:0}
+
+/* top bar */
+.mast{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--band);color:var(--bink);border-bottom:1px solid var(--bline)}
+.mast .in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 24px;padding-block:12px}
+.mast b{font-weight:700;letter-spacing:-.01em}
+.mast nav{display:flex;flex-wrap:wrap;gap:2px 4px;align-items:center}
+.mast nav a{text-decoration:none;color:var(--bmid);font-size:.9rem;padding:6px 10px;border-radius:6px}
+.mast nav a:hover{color:var(--bink);background:var(--band2)}
+.mast nav a.on{color:var(--bink);background:var(--band2)}
+@media (max-width:620px){.mast nav a.hs{display:none}}
+
+/* hero */
+.hero{background:var(--band);color:var(--bink)}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:32px 56px;align-items:center;padding-block:clamp(36px,5vw,64px)}
+.kicker{font-size:.86rem;color:var(--bacc);letter-spacing:.02em}
+.hero h1{font-size:clamp(2.1rem,1.4rem + 2.6vw,3.6rem);line-height:1.02;letter-spacing:-.03em;margin:14px 0 18px;max-width:18ch}
+.hero h1 em.q{color:var(--bgold)}
+.hero .lede{color:var(--bmid);max-width:52ch;font-size:clamp(1rem,.96rem + .25vw,1.12rem)}
+.hero .lede + .lede{margin-top:10px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font-weight:600;font-size:.94rem;text-decoration:none;transition:background .2s,color .2s}
+.btn.gold{background:var(--bgold);color:#1b1a12}
+.btn.gold:hover{background:#f2c983}
+.btn.line{border:1px solid var(--bline);color:var(--bink)}
+.btn.line:hover{background:var(--band2)}
+.ok{color:var(--bacc);font-size:.85rem}
+.heroviz{background:var(--band2);border:1px solid var(--bline);border-radius:16px;padding:20px 22px 16px;max-width:440px;width:100%;justify-self:end}
+.heroviz .big{font-stretch:66%;font-weight:650;font-size:clamp(2.4rem,2rem + 1.6vw,3.2rem);line-height:.9;color:var(--bgold)}
+.heroviz .hcap{color:var(--bmid);font-size:.92rem;line-height:1.4;margin:6px 0 14px;max-width:32ch}
+.heroviz .spark .ln{stroke:var(--bacc)} .heroviz .spark .pt{fill:var(--bgold)} .heroviz .spark .pt0{fill:var(--bmid)}
+.heroviz .spark .tgt{stroke:var(--bgold)} .heroviz .spark .tgtl{fill:var(--bgold)}
+.heroviz .vizcap{color:var(--bmid)}
+.total{display:flex;align-items:baseline;gap:12px;border-top:1px solid var(--bline);margin-top:16px;padding-top:14px}
+.total b{font-stretch:66%;font-weight:650;font-size:2.2rem;line-height:1;color:var(--bink)}
+.total span{font-size:.85rem;color:var(--bmid)}
+.kfs{border-top:1px solid var(--bline)}
+.kfs .in{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));padding-block:0}
+.kf{padding:20px 16px 22px 0}
+.kf + .kf{padding-left:16px;border-left:1px solid var(--bline)}
+.kf b{display:block;font-stretch:66%;font-weight:650;font-size:clamp(1.9rem,1.5rem + 1.2vw,2.6rem);line-height:1;color:var(--bink)}
+.kf span{font-size:.82rem;color:var(--bmid);line-height:1.35;display:block;margin-top:6px}
+@media (max-width:860px){.hero .in{grid-template-columns:1fr}.heroviz{justify-self:stretch;max-width:none}}
+@media (max-width:520px){.kf + .kf{border-left:0;padding-left:0;border-top:1px solid var(--bline)}}
+
+/* shared charts */
+.spark{width:100%;height:auto;display:block;overflow:visible}
+.spark .ln{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.spark .tgt{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:4 4}
+.spark .tgtl{fill:var(--gold);font-size:9px;font-family:var(--f)}
+.spark .pt{fill:var(--gold)} .spark .pt0{fill:var(--light)}
+.vizcap{display:flex;justify-content:space-between;gap:10px;font-size:.78rem;color:var(--mid);margin-top:8px}
+
+/* sections */
+.sec{padding-block:clamp(56px,8vw,104px)}
+.sec-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px 48px;align-items:end;margin-bottom:34px}
+.sec-h .n{font-size:.84rem;color:var(--accent);font-weight:600;display:block;margin-bottom:8px}
+.sec-h h2{font-size:clamp(2rem,1.4rem + 2.4vw,3.4rem);line-height:1}
+.sec-h p{color:var(--mid);max-width:54ch}
+@media (max-width:860px){.sec-h{grid-template-columns:1fr}}
+
+/* competencies */
+.comp{background:var(--tile);border-bottom:1px solid var(--line)}
+.comp .in{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px 40px;padding-block:30px}
+.comp h3{font-size:.95rem;color:var(--accent);margin-bottom:6px}
+.comp p{font-size:.94rem;color:var(--mid);line-height:1.5}
+
+/* work */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{border:1px solid var(--line);background:var(--tile);border-radius:8px;padding:7px 14px;font-size:.88rem;color:var(--mid);transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--tile)}
+#cases{display:flex;flex-direction:column;gap:18px}
+.case{display:grid;grid-template-columns:minmax(0,19rem) minmax(0,1fr);background:var(--tile);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:opacity .3s,border-color .2s}
+.case:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+.case.dim,.item.dim{opacity:.3}
+.viz{background:var(--hair);padding:26px 24px;display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--line)}
+.viz .fig{font-size:clamp(2.4rem,2rem + 1.6vw,3.4rem);color:var(--accent)}
+.figl{font-size:.86rem;color:var(--mid);line-height:1.35;margin-bottom:16px}
+.txt{padding:26px 28px;display:flex;flex-direction:column;gap:8px}
+.meta{font-size:.8rem;color:var(--gold);font-weight:600}
+.txt h3{font-size:clamp(1.2rem,1.05rem + .5vw,1.5rem);line-height:1.2;margin-bottom:6px}
+.pcr{display:grid;grid-template-columns:6.2rem minmax(0,1fr);gap:9px 16px;margin:0}
+.pcr dt{font-size:.78rem;font-weight:700;color:var(--accent);padding-top:3px}
+.pcr dd{margin:0;color:var(--mid);max-width:66ch}
+.pcr dd b{color:var(--ink);font-weight:600}
+@media (max-width:760px){.case{grid-template-columns:1fr}.viz{border-right:0;border-bottom:1px solid var(--line)}.pcr{grid-template-columns:1fr;gap:2px}.pcr dd{margin-bottom:8px}}
+.mbars{display:flex;flex-direction:column;gap:10px}
+.mb{display:grid;grid-template-columns:5.6rem minmax(0,1fr) 3.4rem;gap:8px;align-items:center;font-size:.8rem;color:var(--mid)}
+.mb b{text-align:right;color:var(--ink);font-weight:600}
+.mbt{height:12px;background:color-mix(in srgb,var(--bar) 40%,transparent);border-radius:3px;overflow:hidden}
+.mbf{height:100%;background:var(--accent);border-radius:3px}
+.mbf.mute{background:var(--bar)}
+.dots{display:grid;grid-template-columns:repeat(var(--c),1fr);gap:4px;max-width:200px}
+.dots i{aspect-ratio:1;border-radius:50%;background:var(--bar)}
+.dots i.on{background:var(--accent)}
+.more-h{margin:48px 0 14px;font-size:1.1rem}
+.more{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:12px}
+.item{background:var(--tile);border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:opacity .3s}
+.item h4{font-size:.98rem;margin-bottom:4px}
+.item p{font-size:.88rem;color:var(--mid)}
+
+/* data (dashboard) */
+.data{background:var(--tile);border-block:1px solid var(--line)}
+.opts{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.9rem}
+.opt{color:var(--mid);padding-bottom:3px;border-bottom:2px solid transparent}
+.opt:hover{color:var(--ink)}
+.opt[aria-pressed="true"],.opt[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+.tabs{display:flex;flex-wrap:wrap;gap:4px 28px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.tabs .opt{font-size:1.05rem;font-weight:600;padding-bottom:10px;margin-bottom:-1px}
+.panel{display:flex;flex-direction:column;gap:32px}
+.ph{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;align-items:end}
+.ph p{max-width:60ch;color:var(--mid);font-size:.95rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.stat{background:var(--hair);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-stretch:66%;font-weight:650;font-size:clamp(2rem,1.6rem + 1.4vw,2.7rem);line-height:1;color:var(--accent)}
+.stat span{font-size:.84rem;color:var(--mid)}
+.stat em{font-style:normal;font-size:.8rem;color:var(--ok)}
+.stat em.over{color:var(--warn)}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:36px 40px}
+.chart{display:flex;flex-direction:column;gap:12px;min-width:0}
+.chart h4{font-size:1rem;letter-spacing:-.01em}
+.chart .sub{font-size:.85rem;color:var(--mid);margin-top:-6px}
+.note{font-size:1.1rem;font-weight:500;line-height:1.5;max-width:60ch;border-left:3px solid var(--gold);padding-left:16px}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.8rem;color:var(--mid)}
+.legend i{display:inline-block;width:9px;height:9px;margin-right:6px;border-radius:2px}
+.cols{display:flex;align-items:flex-end;gap:6px;height:170px;border-bottom:1px solid var(--ink);position:relative}
+.colb{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;min-width:0}
+.colb .v{font-size:.72rem;color:var(--mid)}
+.colb .bar{width:100%;max-width:38px;background:var(--bar);border-radius:4px 4px 0 0;transition:height .45s ease,background .25s}
+.colb.on .bar{background:var(--accent)}
+.colb.on .v{color:var(--ink);font-weight:600}
+.colb.hot .bar{background:var(--warn)}
+button.colb:hover .bar{background:color-mix(in srgb,var(--accent) 55%,var(--bar))}
+.xl{display:flex;gap:6px}
+.xl span{flex:1;text-align:center;font-size:.7rem;color:var(--light);min-width:0;line-height:1.2}
+.target{position:absolute;left:0;right:0;border-top:1.5px dashed var(--gold);pointer-events:none}
+.target span{position:absolute;right:0;top:-18px;font-size:.7rem;color:var(--gold)}
+.hb{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr) 3.4rem;gap:10px;align-items:center;font-size:.85rem}
+.hb .l{color:var(--mid);line-height:1.25}
+.hb .t{height:9px;background:var(--hair);border-radius:3px;overflow:hidden}
+.hb .f{height:100%;background:var(--accent);transition:width .45s ease}
+.hb .f.mute{background:var(--bar)}
+.hb .n{text-align:right}
+.stack{display:flex;height:12px;gap:2px;border-radius:4px;overflow:hidden}
+.slider{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.slider input{flex:1;min-width:160px;accent-color:var(--accent)}
+.slider output{font-stretch:66%;font-weight:650;font-size:1.9rem;min-width:3ch;color:var(--accent)}
+.cap{display:grid;grid-template-columns:2.6rem minmax(0,1fr) 3.8rem;gap:10px;align-items:center;font-size:.8rem}
+.cap .l{color:var(--mid)}
+.cap .seat{height:9px;background:var(--bar);position:relative;overflow:hidden;border-radius:3px}
+.cap .use{position:absolute;inset:0 auto 0 0;background:var(--accent);transition:width .45s}
+.cap .use.low{background:var(--warn)}
+.cap.nd .seat{background:repeating-linear-gradient(135deg,var(--line) 0 4px,transparent 4px 8px)}
+.cap .n{text-align:right}
+.bighead{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:end}
+.bighead .fig{font-size:clamp(2.4rem,1.9rem + 1.8vw,3.4rem);color:var(--accent)}
+#weekCols .colb .bar{max-width:none}
+#weekCols .colb .v{font-size:.66rem}
+.foot{font-size:.8rem;color:var(--light);margin-top:32px;line-height:1.5}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));border-top:2px solid var(--ink)}
+.tl li{display:flex;flex-direction:column;gap:4px;padding:12px 16px 4px 0;font-size:.9rem;line-height:1.35}
+.tl li + li{padding-left:16px;border-left:1px solid var(--line)}
+.tl b{font-weight:600}
+.tl-when{font-size:.8rem;color:var(--gold);font-weight:700}
+@media (max-width:560px){.tl li + li{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
+.itil{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px 32px}
+.itil b{display:block;font-weight:600;margin-bottom:4px}
+.itil p{font-size:.9rem;color:var(--mid)}
+
+/* recognition band */
+.rec{background:var(--band);color:var(--bink)}
+.rec .sec-h p{color:var(--bmid)} .rec .sec-h .n{color:var(--bacc)}
+.lead-q{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,18rem);gap:20px 48px;align-items:start;padding-bottom:32px;border-bottom:1px solid var(--bline)}
+.lead-q blockquote{margin:0;font-size:clamp(1.15rem,1rem + .6vw,1.5rem);line-height:1.5;font-weight:500;color:#ffffff;max-width:46ch}
+.lead-q blockquote::before,.quotes blockquote::before{content:"“";display:block;font-family:var(--q);font-size:3.2rem;line-height:.6;color:var(--bgold);margin-bottom:8px}
+.lead-q blockquote::after,.quotes blockquote::after{content:"”";font-family:var(--q);font-size:1.6em;line-height:0;color:var(--bgold);margin-left:3px;vertical-align:-.32em}
+.award-tag{font-size:.82rem;color:var(--bgold);font-weight:600;margin-bottom:10px;display:block}
+.side-award{border-left:2px solid var(--bgold);padding-left:16px}
+.side-award p{color:var(--bink);font-size:.95rem;line-height:1.55}
+.side-award + .side-award{margin-top:22px}
+@media (max-width:860px){.lead-q{grid-template-columns:1fr}}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-top:32px}
+.quotes figure{margin:0;background:var(--band2);border:1px solid var(--bline);border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:14px}
+.quotes blockquote{margin:0;font-size:1rem;line-height:1.6;color:var(--bink)}
+.quotes figcaption{font-size:.84rem;color:var(--bgold);font-weight:500}
+.rec .also{color:var(--bink);opacity:.85;font-size:.9rem;margin-top:26px}
+
+/* background */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px 56px}
+.list{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.list li{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.list .when{font-size:.84rem;color:var(--light);padding-top:2px}
+.list b{font-weight:600;display:block}
+.list span span{font-size:.9rem;color:var(--mid)}
+.creds li{display:flex;justify-content:space-between;gap:14px}
+.creds li > span:last-child{white-space:nowrap;font-size:.84rem;color:var(--light)}
+.tools{font-size:.9rem;color:var(--mid);margin-top:14px;line-height:1.8}
+
+/* contact */
+.end{background:var(--band);color:var(--bink)}
+.end .in{padding-block:clamp(56px,8vw,104px);display:flex;flex-direction:column;gap:18px}
+.end .label{color:var(--bmid)}
+.end h2{font-size:clamp(1.8rem,1.3rem + 2vw,3rem);max-width:20ch;line-height:1.05}
+.end .bigmail{font-stretch:70%;font-weight:650;font-size:clamp(1.8rem,1rem + 3.6vw,4.4rem);line-height:1;word-break:break-word;text-align:left;color:var(--bgold)}
+.end .bigmail:hover{color:#f2c983}
+footer{background:var(--band);color:var(--bmid);font-size:.8rem;border-top:1px solid var(--bline)}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px;padding-block:16px}
+
+/* refinements */
+.hero .lede{color:var(--bink);opacity:.86}
+.kicker{font-size:.8rem;letter-spacing:.04em}
+.opsrow{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--bline);border-bottom:1px solid var(--bline);max-width:560px}
+.opsrow li{padding:12px 14px 12px 0;display:flex;flex-direction:column;gap:2px}
+.opsrow li + li{padding-left:14px;border-left:1px solid var(--bline)}
+.opsrow b{font-stretch:66%;font-weight:650;font-size:clamp(1.6rem,1.3rem + 1vw,2.1rem);line-height:1;color:var(--bgold)}
+.opsrow span{font-size:.78rem;color:var(--bmid)}
+.pcr dt.res{color:var(--gold)}
+.pcr dd.res{background:color-mix(in srgb,var(--gold) 10%,transparent);border-left:3px solid var(--gold);padding:8px 12px;color:var(--ink);font-weight:500}
+.pcr dd.res b{font-weight:650}
+.takeaway-box{background:color-mix(in srgb,var(--accent) 9%,transparent);border-left:3px solid var(--accent);padding:12px 16px;font-size:.98rem;line-height:1.5;max-width:76ch;color:var(--ink)}
+.takeaway-box b{display:block;font-size:.76rem;color:var(--accent);margin-bottom:2px;letter-spacing:.03em}
+.case{border-radius:16px}
+.txt{gap:10px}
+@media (max-width:760px){
+  .sec{padding-block:48px}
+  .sec-h{margin-bottom:24px}
+  .txt{padding:20px}
+  .viz{padding:20px}
+  .pcr dd.res{margin-bottom:0}
+  .hb{grid-template-columns:minmax(0,7.5rem) minmax(0,1fr) 3rem;font-size:.8rem}
+  .cols{height:140px;gap:3px}
+  .colb .v{font-size:.62rem}
+  .xl span{font-size:.62rem}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;gap:4px 20px;scrollbar-width:none}
+  .tabs .opt{white-space:nowrap;font-size:.95rem}
+  .ph{align-items:start}
+  .opts{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+  .opts .opt{white-space:nowrap}
+  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+  .chip{white-space:nowrap}
+}
+@media (max-width:620px){
+  .mast .in{flex-wrap:nowrap;gap:12px}
+  .mast nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .mast nav a{white-space:nowrap;padding:6px 8px}
+  .mast nav a.hs{display:inline-block}
+  .opsrow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opsrow li:nth-child(3){padding-left:0;border-left:0}
+  .opsrow li:nth-child(n+3){border-top:1px solid var(--bline)}
+}
+/* header: subtitle sits under the heading */
+.sec-h{grid-template-columns:1fr;gap:12px;margin-bottom:36px}
+.sec-h p{max-width:60ch}
+@media (max-width:760px){.sec-h{margin-bottom:26px}}
+/* "Also" on one line */
+.more{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.item{padding:14px 16px}
+.item h4{font-size:.94rem}
+.item p{font-size:.84rem}
+@media (max-width:960px){.more{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.more .item{flex:0 0 230px;scroll-snap-align:start}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="in">
+    <b>Majed Maktari</b>
+    <nav aria-label="Sections"><a href="#work">Work</a><a href="#data">Data</a><a href="#recognition">Recognition</a><a href="#background" class="hs">Background</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<section class="hero" aria-label="Introduction">
+  <div class="in">
+    <div>
+      <p class="kicker">IT Operations | Systems Administration | Service Delivery | Automation</p>
+      <h1>Improving IT operations through better systems, processes, and <em class="q">decisions.</em></h1>
+      <p class="lede">Leading IT operations for campus learning spaces, supporting 1,500+ computers, 80+ printers, and campus printing services at Purdue University Fort Wayne.</p>
+      <ul class="opsrow" aria-label="Operational scope">
+        <li><b>1,500+</b><span>computers</span></li>
+        <li><b>80+</b><span>printers</span></li>
+        <li><b>5</b><span>print servers</span></li>
+        <li><b>9</b><span>technicians</span></li>
+      </ul>
+      <div class="cta-row">
+        <button class="btn gold" id="copyEmail" type="button">Copy email</button>
+        <a class="btn line" href="https://www.linkedin.com/in/majedmaktari/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn line" href="#work">See the work</a>
+        <span class="ok" id="copied" aria-live="polite"></span>
+        <span id="emailText" hidden>maktarimajed@gmail.com</span>
+      </div>
+    </div>
+    <div class="heroviz">
+      <div class="big">97%</div>
+      <p class="hcap">lower SLA miss rate as reported ticket volume grew significantly.</p>
+      <svg class="spark" viewBox="0 0 300 80" role="img" aria-label="Share of tickets missing SLA by semester, from 28.1% to 0.7%">
+  <line x1="0" y1="66" x2="300" y2="66" class="tgt"/>
+  <text x="300" y="60" text-anchor="end" class="tgtl">5% target</text>
+  <polyline points="0,6 42.9,26.6 85.7,40.6 128.6,40.8 171.4,49.2 214.3,50.4 257.1,66.5 300,69.4" class="ln"/>
+  <circle cx="0" cy="6" r="3.5" class="pt0"/><circle cx="300" cy="69.4" r="4.5" class="pt"/>
+</svg>
+      <p class="vizcap"><span>Fall 2023 · 28% missed</span><span>Spring 2026 · 0.7%</span></p>
+      <div class="total"><b>$200K+</b><span>in estimated savings and cost avoidance through smarter IT investments.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="comp" aria-label="Core competencies">
+  <div class="in">
+    <div><h3>Infrastructure and systems</h3><p>Windows Server, Active Directory, macOS, Jamf, PaperCut MF, endpoint lifecycle management</p></div>
+    <div><h3>Service management and leadership</h3><p>ITIL 4, TeamDynamix, incident and problem management, SLA reporting, vendor coordination, team supervision</p></div>
+    <div><h3>Automation and analytics</h3><p>Power BI, Power Apps, Power Automate, SQL, SharePoint, JavaScript, Python</p></div>
+  </div>
+</section>
+
+<section class="sec" id="work" aria-labelledby="work-h">
+  <div class="in">
+    <div class="sec-h">
+      <div><span class="n">01 · Selected work</span><h2 id="work-h">Challenges, decisions, and results</h2></div>
+      <p>Filter by the kind of role you're hiring for.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Role type" id="lenses">
+      <button class="chip" type="button" data-lens="all" aria-pressed="true">Everything</button>
+      <button class="chip" type="button" data-lens="it-management" aria-pressed="false">IT and service management</button>
+      <button class="chip" type="button" data-lens="analytics" aria-pressed="false">Analytics and reporting</button>
+      <button class="chip" type="button" data-lens="projects" aria-pressed="false">Projects and implementation</button>
+      <button class="chip" type="button" data-lens="systems" aria-pressed="false">Systems and support</button>
+    </div>
+    <div id="cases">
+      <article class="case" data-lenses="it-management">
+        <div class="viz"><b class="fig">3.5×</b><p class="figl">more tickets per fall semester, with SLA misses down 97%</p><div class="mbars"><div class="mb"><span>Fall 2023</span><div class="mbt"><div class="mbf mute" style="width:28.4%"></div></div><b>57</b></div><div class="mb"><span>Fall 2025</span><div class="mbt"><div class="mbf " style="width:100%"></div></div><b>201</b></div></div><p class="vizcap"><span>Tickets per fall semester</span></p></div>
+        <div class="txt"><p class="meta">Service delivery · Team leadership</p><h3>Scaling IT Service Delivery</h3><dl class="pcr"><dt>Problem</dt><dd>In October 2023, inconsistent ticketing practices and limited reporting options contributed to a 28% SLA miss rate.</dd><dt>Approach</dt><dd>Standardized ticketing, established a 5% SLA target, introduced Quick Ticket QR codes, and trained approximately 13 technicians.</dd><dt class="res">Result</dt><dd class="res"><b>Ticket volume increased 3.5× while SLA misses dropped to 0.7%.</b> In Fall 2026, consolidated two support groups into one cross-trained team of nine.</dd></dl></div>
+      </article>
+      <article class="case" data-lenses="analytics it-management projects">
+        <div class="viz"><b class="fig">$129,280</b><p class="figl">avoided in the Windows 11 refresh</p><div class="mbars"><div class="mb"><span>Flagged</span><div class="mbt"><div class="mbf mute" style="width:100%"></div></div><b>271</b></div><div class="mb"><span>Bought</span><div class="mbt"><div class="mbf " style="width:52.8%"></div></div><b>143</b></div></div></div>
+        <div class="txt"><p class="meta">Capacity planning · Power BI</p><h3>Smarter Hardware Planning</h3><dl class="pcr"><dt>Problem</dt><dd>A readiness scan flagged 271 computers that couldn't run Windows 11. The default was to replace them all.</dd><dt>Decision</dt><dd>Used peak utilization data to right-size labs, close an underused lab, and retire 15 unnecessary residence hall computers.</dd><dt class="res">Result</dt><dd class="res"><b>Purchased 143 instead of 271 computers.</b> Applied the same approach to future refreshes, prioritizing reuse (70 machines reused, ~80 repurposed).</dd></dl></div>
+      </article>
+      <article class="case" data-lenses="systems it-management analytics">
+        <div class="viz"><b class="fig">$50→$20</b><p class="figl">printing allowance per student</p><div class="mbars"><div class="mb"><span>Before</span><div class="mbt"><div class="mbf mute" style="width:100%"></div></div><b>$50</b></div><div class="mb"><span>Now</span><div class="mbt"><div class="mbf " style="width:40%"></div></div><b>$20</b></div></div><p class="vizcap"><span>Allowance per student, per term</span></p></div>
+        <div class="txt"><p class="meta">Service ownership · PaperCut MF · Windows Server</p><h3>Managing Campus Printing Infrastructure</h3><dl class="pcr"><dt>Scope</dt><dd>Five print servers, about 80 printers, and three co-managed regional servers.</dd><dt>Approach</dt><dd>Led print server migration and consolidation, added Web Print redundancy, improved document processing, and corrected color printing billing errors.</dd><dt>Decision</dt><dd>Analyzed two years of printing data showing 87.98% of students used $20 or less per term. Recommended a lower allowance and standardized rates.</dd><dt class="res">Result</dt><dd class="res"><b>Implemented the new $20 allowance and lower printing rates in Fall 2026.</b></dd></dl></div>
+      </article>
+      <article class="case" data-lenses="systems it-management">
+        <div class="viz"><b class="fig">49</b><p class="figl">failing workstations repaired under Dell warranty</p><div class="dots" style="--c:7" role="img" aria-label="49 of 49 highlighted"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="vizcap"><span>40 processors · 14 main boards</span></p></div>
+        <div class="txt"><p class="meta">Problem management · Vendor management</p><h3>Tracking down Intel 13th and 14th gen failures</h3><dl class="pcr"><dt>Problem</dt><dd>Computers across campus started blue-screening in September 2024.</dd><dt>Approach</dt><dd>Identified Intel processor instability, coordinated BIOS updates, stress-tested affected systems, and managed warranty repairs.</dd><dt class="res">Result</dt><dd class="res"><b>49 machines repaired in six months</b>, including 40 processors and 14 main boards.</dd></dl></div>
+      </article>
+      <article class="case" data-lenses="projects it-management">
+        <div class="viz"><b class="fig">~$52K</b><p class="figl">estimated avoided by keeping 12 of 64 computers</p><div class="dots" style="--c:8" role="img" aria-label="12 of 64 highlighted"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><p class="vizcap"><span>12 of 64 seats kept</span></p></div>
+        <div class="txt"><p class="meta">Learning space design · 2026</p><h3>Redesigning Labs for Modern Learning</h3><dl class="pcr"><dt>Problem</dt><dd>A lab of 64 aging Windows computers was due for replacement, and usage showed most seats sat empty.</dd><dt>Decision</dt><dd>Reduced 64 workstations to 12 Windows, Mac, and high-performance systems, adding collaborative spaces and the campus's first single-cable BYOD stations.</dd><dt class="res">Result</dt><dd class="res"><b>Opened Spring 2026 and featured in <a href="https://www.pfw.edu/news-center/refurbished-kettler-computer-lab-offers-new-options" target="_blank" rel="noopener">PFW News</a>.</b> Also delivered a ~$56K interior design classroom and 21-seat Mac audio lab.</dd></dl></div>
+      </article>
+      <article class="case" data-lenses="projects it-management systems">
+        <div class="viz"><b class="fig">$21,801</b><p class="figl">saved on a 22-seat esports lab</p><div class="mbars"><div class="mb"><span>Alienware quote</span><div class="mbt"><div class="mbf mute" style="width:100%"></div></div><b>$74.4K</b></div><div class="mb"><span>Dell, ordered</span><div class="mbt"><div class="mbf " style="width:70.7%"></div></div><b>$52.6K</b></div></div><p class="vizcap"><span>22-seat esports lab</span></p></div>
+        <div class="txt"><p class="meta">Spend and vendor management</p><h3>Smarter IT Procurement</h3><dl class="pcr"><dt>Scope</dt><dd>Manage approximately $200K in annual equipment planning, procurement, and warranty coordination.</dd><dt>Decision</dt><dd>Selected comparable Dell Pro Max workstations at $2,392 instead of $3,383 Alienware systems.</dd><dt class="res">Result</dt><dd class="res"><b>Reduced workstation costs by 29% without sacrificing performance.</b></dd></dl></div>
+      </article>
+    </div>
+    <h3 class="more-h">Also</h3>
+    <div class="more" id="more">
+      <div class="item" data-lenses="projects analytics"><h4>Open computer lab map</h4><p>An interactive map that helps students find open labs, <a href="https://www.pfw.edu/sites/default/files/documents-2026/04/labMap.html" target="_blank" rel="noopener">published on pfw.edu</a>.</p></div>
+      <div class="item" data-lenses="projects"><h4>TechHub kiosk page</h4><p>A kiosk web page in HTML, CSS and JavaScript, <a href="https://www.pfw.edu/sites/default/files/documents-2026/10/pfw_techhub_Kiosk_new_1.html" target="_blank" rel="noopener">published on pfw.edu</a>.</p></div>
+      <div class="item" data-lenses="analytics projects"><h4>Power Apps for lab operations</h4><p>A Lab Readiness app that tracks refresh work room by room and a Software Catalog app for ownership and packaging status.</p></div>
+      <div class="item" data-lenses="systems it-management"><h4>macOS Tahoe deployment guide</h4><p>Technician guide for USB imaging, enrollment and post-deployment checks on the iMac fleet.</p></div>
+      <div class="item" data-lenses="analytics systems"><h4>Printer monitoring prototype</h4><p>Python, FastAPI, SQLite and SNMP proof of concept for HP printer status.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec data" id="data" aria-labelledby="data-h">
+  <div class="in">
+    <div class="sec-h">
+      <div><span class="n">02 · Dashboards</span><h2 id="data-h">Performance and Analytics</h2></div>
+      <p>Interactive dashboards recreated from Power BI models. Explore service performance, printing, and lab utilization.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Dashboard views">
+      <button class="opt" role="tab" id="t-svc" aria-controls="p-svc" aria-selected="true">Service desk</button>
+      <button class="opt" role="tab" id="t-prt" aria-controls="p-prt" aria-selected="false">Printing allowance</button>
+      <button class="opt" role="tab" id="t-lab" aria-controls="p-lab" aria-selected="false">Lab right-sizing</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-svc" aria-labelledby="t-svc">
+      <p class="takeaway-box"><b>Takeaway</b>Easier reporting raised ticket volume 3.5×, while standardized ticketing pushed SLA misses below the 5% target.</p>
+      <div class="ph">
+        <p>Since October 2023, ticket volume has increased while SLA misses have steadily declined. TeamDynamix data, September 2023 to May 2026. Select a semester to see its detail.</p>
+        <button class="opt" type="button" id="svcAll" aria-pressed="true">All semesters</button>
+      </div>
+      <div class="stats" id="svcStats"></div>
+      <div class="g2">
+        <div class="chart">
+          <h4>Tickets per semester</h4>
+          <div class="cols" id="tixCols" role="group" aria-label="Tickets per semester, select one"></div>
+          <div class="xl" id="tixX"></div>
+        </div>
+        <div class="chart">
+          <h4>Share of tickets that missed SLA</h4>
+          <div class="cols" id="slaCols" role="group" aria-label="SLA miss rate per semester, select one"></div>
+          <div class="xl" id="slaX"></div>
+        </div>
+      </div>
+      <p class="note">Fall 2023–2025: ticket volume increased from 57 to 201 while SLA misses fell from 28.1% to 2%. Spring 2026 reached 0.7%.</p>
+      <div class="chart">
+        <h4>What changed, and when</h4>
+        <ol class="tl">
+          <li><span class="tl-when">Fall 2023</span><b>Took over the team</b><span class="mid">57 tickets · 28.1% missed SLA</span></li>
+          <li><span class="tl-when">Fall 2024</span><b>ITIL 4 Collaborate, Assure and Improve</b><span class="mid">131 tickets · 13.0% missed</span></li>
+          <li><span class="tl-when">Spring 2025</span><b>ITIL 4 Create, Deliver and Support, and Practice Manager</b><span class="mid">117 tickets · 9.4% missed</span></li>
+          <li><span class="tl-when">Fall 2025</span><b>Quick Ticket QR intake launched</b><span class="mid">201 tickets · 2.0% missed</span></li>
+          <li><span class="tl-when">Spring 2026</span><b>Inside the 5% target all semester</b><span class="mid">153 tickets · 0.7% missed</span></li>
+        </ol>
+      </div>
+      <div class="chart">
+        <h4 id="chanTitle">How requests reached us</h4>
+        <div id="chanBars" style="display:flex;flex-direction:column;gap:8px;max-width:760px"></div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-prt" aria-labelledby="t-prt" hidden>
+      <p class="takeaway-box"><b>Takeaway</b>Most students print far less than their allowance. A $20 allowance covers about 88% of them, and no college averages above it.</p>
+      <div class="ph">
+        <p>PaperCut print records joined to enrollment, August 2024 to April 2026, to test whether a $20 allowance would cover most students.</p>
+        <div class="opts" role="group" aria-label="Term" id="termSeg">
+          <button class="opt" type="button" data-t="all" aria-pressed="true">All terms</button>
+          <button class="opt" type="button" data-t="Fall 2024" aria-pressed="false">Fall 24</button>
+          <button class="opt" type="button" data-t="Spring 2025" aria-pressed="false">Spring 25</button>
+          <button class="opt" type="button" data-t="Summer 2025" aria-pressed="false">Summer 25</button>
+          <button class="opt" type="button" data-t="Fall 2025" aria-pressed="false">Fall 25</button>
+          <button class="opt" type="button" data-t="Spring 2026" aria-pressed="false">Spring 26</button>
+        </div>
+      </div>
+      <div class="stats" id="prtStats"></div>
+      <div class="g2">
+        <div class="chart">
+          <h4>What printing students spent in a term</h4>
+          <div class="slider">
+            <label for="allow" class="label">Try an allowance</label>
+            <input type="range" id="allow" min="10" max="50" step="10" value="20">
+            <output id="allowOut" for="allow">$20</output>
+          </div>
+          <div class="cols" id="spendCols" style="height:150px"></div>
+          <div class="xl" id="spendX"></div>
+          <p class="note" id="allowText" style="font-size:1rem"></p>
+        </div>
+        <div class="chart">
+          <h4>Average spend by college</h4>
+          <p class="sub">Checking whether any college would need exceptions</p>
+          <div id="collegeBars" style="display:flex;flex-direction:column;gap:9px"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-lab" aria-labelledby="t-lab" hidden>
+      <p class="takeaway-box"><b>Takeaway</b>Sizing each room to its real peak use cut the Windows 11 order from 271 to 143 computers.</p>
+      <div class="stats">
+        <div class="stat"><b>1,280</b><span>Windows 10 computers scanned</span></div>
+        <div class="stat"><b>271</b><span>couldn't run Windows 11</span></div>
+        <div class="stat"><b>143</b><span>actually replaced</span></div>
+        <div class="stat"><b>128</b><span>never bought, about $129K</span></div>
+      </div>
+      <p class="note">The scan said 271 machines had to go. Before ordering, each room was checked against its busiest moment. Rooms that never filled up didn't need every seat back, and the order came in 128 computers smaller.</p>
+      <div class="g2">
+        <div class="chart">
+          <h4>The starting point: 271 computers couldn't run Windows 11</h4>
+          <p class="sub">Readiness scan of 1,280 Windows 10 computers</p>
+          <div class="legend"><span><i style="background:var(--ok)"></i>Ready, 836</span><span><i style="background:var(--warn)"></i>Needed Secure Boot on, 173</span><span><i style="background:var(--bar)"></i>Couldn't upgrade, 271</span></div>
+          <div class="stack" role="img" aria-label="836 ready, 173 needed Secure Boot enabled, 271 could not upgrade"><div style="background:var(--ok);width:65.3%"></div><div style="background:var(--warn);width:13.5%"></div><div style="background:var(--bar);flex:1"></div></div>
+          <p class="small mid">Replacing all 271 one-for-one was the default. The usage data here is why 128 of them were never bought.</p>
+        </div>
+        <div class="chart">
+          <h4>Residence halls, summer 2024: 15 machines retired, not replaced</h4>
+          <p class="sub">Machines due for replacement in each area, compared with the most ever in use at once</p>
+          <div id="hallBars" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:6px 22px"></div>
+          <p class="small mid">In 9 of 14 areas, no more than two people were ever logged in. Retiring 15 machines avoided about $18,600 in estimated lifecycle cost.</p>
+        </div>
+      </div>
+      <div class="chart">
+        <div class="ph" style="align-items:center">
+          <div>
+            <h4>Engineering building: rooms with more seats than they ever used</h4>
+            <p class="sub" style="margin-top:2px">Rooms that never filled up didn't need every seat replaced</p>
+          </div>
+          <div class="opts" role="group" aria-label="Floor" id="floorSeg">
+            <button class="opt" type="button" data-f="0" aria-pressed="true">All</button>
+            <button class="opt" type="button" data-f="1" aria-pressed="false">Floor 1</button>
+            <button class="opt" type="button" data-f="2" aria-pressed="false">Floor 2</button>
+            <button class="opt" type="button" data-f="3" aria-pressed="false">Floor 3</button>
+          </div>
+        </div>
+        <div class="legend"><span><i style="background:var(--bar)"></i>Seats</span><span><i style="background:var(--accent)"></i>Most in use at once</span><span><i style="background:var(--warn)"></i>Never above 60%</span></div>
+        <div id="roomBars" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:7px 32px"></div>
+        <p class="sub" id="roomNote" style="margin-top:2px"></p>
+      </div>
+      <div class="g2">
+        <div class="chart">
+          <div class="bighead"><b class="fig">4 of 32</b><span class="label">weeks busy</span></div>
+          <h4>A lab busy only when a class booked it, closed and repurposed instead of refreshed</h4>
+          <p class="sub" style="margin-top:0">Most people logged in at once in each week, Fall 2024 to Spring 2025</p>
+          <div class="cols" id="weekCols" style="height:110px;gap:3px"></div>
+          <div class="xl" id="weekX"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="foot">Sources: TeamDynamix · PaperCut · enrollment · TDX ITAM (Sassafras) · LabStats. Ticket figures are team totals. Multi-term printing counts are student-terms, not unique people.</p>
+  </div>
+</section>
+
+<section class="sec rec" id="recognition" aria-labelledby="rec-h">
+  <div class="in">
+    <div class="sec-h">
+      <div><span class="n">03 · Recognition</span><h2 id="rec-h">Recognition and Feedback</h2></div>
+      <p>Purdue staff awards from colleagues and campus partners.</p>
+    </div>
+    <div class="lead-q">
+      <div>
+        <span class="award-tag">Purdue BRAVO Award · Quick Ticket</span>
+        <blockquote>Majed has created and implemented an innovative improvement for PFW customer service. QR code stickers have been placed in PFW open labs which lead the customer to a custom and slimmed down version of TDX for quicker/simpler support requests.</blockquote>
+      </div>
+      <div>
+        <div class="side-award"><span class="award-tag">What happened next</span><p>Quick Ticket is being expanded to classroom lecterns.</p></div>
+        <div class="side-award"><span class="award-tag">Purdue IT SPOT Award</span><p>For stepping into the extended help desk queue during the first week of school, when VPN and security issues drove a surge in support requests.</p></div>
+      </div>
+    </div>
+    <div class="quotes">
+      <figure><blockquote>Majed is awesome to work with. He is reliable, he listens and always helps to resolve our computer problems in a timely manner. The Department of Art and Design truly appreciates everything he does for us.</blockquote><figcaption>Purdue Ripples Award · Department of Art and Design</figcaption></figure>
+      <figure><blockquote>You reply quickly to emails, are willing to meet in person, and communicate using non-tech words. You have been an immense help! My team of students also thanks you!</blockquote><figcaption>Purdue Ripples Award · Campus partner</figcaption></figure>
+      <figure><blockquote>Thank you and your team for the help and support with getting the CVPA computer labs and technology up and running this semester.</blockquote><figcaption>Purdue Ripples Award · College of Visual and Performing Arts</figcaption></figure>
+    </div>
+    <p class="also">Also: PFW News Center feature on the Kettler lab redesign (January 2026) · Purdue Global Chancellor's List and Dean's List (2025) · Ivy Tech Dean's List, four terms.</p>
+  </div>
+</section>
+
+<section class="sec" id="background" aria-labelledby="bg-h">
+  <div class="in">
+    <div class="sec-h">
+      <div><span class="n">04 · Background</span><h2 id="bg-h">Experience and Certifications</h2></div>
+      <p></p>
+    </div>
+    <div class="two">
+      <ol class="list">
+        <li><span class="when">2023 – now</span><span><b>IT Lab Administrator</b><span>Purdue Information Technology, Fort Wayne. Joined as IT Lab Operations Supervisor; retitled in May 2025.</span></span></li>
+        <li><span class="when">2021 – 2023</span><span><b>IT Technician Associate</b><span>Purdue IT. Tier 1 and 2 support, imaging, incidents and requests in TeamDynamix and ServiceNow.</span></span></li>
+        <li><span class="when">2021</span><span><b>IT Intern</b><span>Ultra Clean Technology.</span></span></li>
+        <li><span class="when">2017 – 2021</span><span><b>Help desk, student services and customer roles</b><span>PFW IT Help Desk, Ivy Tech enrollment, HP brand ambassador, hotel customer care.</span></span></li>
+      </ol>
+      <div>
+        <ul class="list creds">
+          <li><span>ITIL 4 Practice Manager</span><span>2025</span></li>
+          <li><span>ITIL 4 Specialist: Create, Deliver and Support</span><span>2025</span></li>
+          <li><span>ITIL 4 Specialist: Collaborate, Assure and Improve</span><span>2024</span></li>
+          <li><span>ITIL 4 Foundation</span><span>2022</span></li>
+          <li><span>CompTIA Project+</span><span>renewed to 2028</span></li>
+          <li><span>B.S. Information Technology, IT Management and Consulting</span><span>Purdue Global</span></li>
+          <li><span>A.A.S. Software Development<br><small class="mid">Includes Java Application Development Technical Certificate, Web Application Development Certificate, Software Development Technical Certificate and Web Foundations Associate</small></span><span>Ivy Tech · 2021</span></li>
+          <li><span>Microsoft Technology Associate: Software Development Fundamentals</span><span>2020</span></li>
+          <li><span>Microsoft Technology Associate: Web Development Fundamentals</span><span>2020</span></li>
+        </ul>
+        <p class="tools">Familiar with the software development lifecycle and Agile and Scrum methods.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="end" id="contact" aria-labelledby="end-h">
+  <div class="in">
+    <p class="label">Open to IT operations, systems administration, and service delivery leadership roles. Remote or relocation.</p>
+    <h2 id="end-h">Let's improve your IT operations.</h2>
+    <button class="bigmail" id="copyEmail2" type="button">maktarimajed@gmail.com</button>
+    <div class="cta-row" style="margin-top:4px"><span class="label">Click the address to copy it</span><a class="btn line" href="https://www.linkedin.com/in/majedmaktari/" target="_blank" rel="noopener">LinkedIn</a><span class="ok" id="copied2" aria-live="polite"></span></div>
+  </div>
+</section>
+<footer><div class="in"><span>Dollar amounts are estimated avoided costs or savings against quotes. Results were achieved with partner teams.</span><span>© 2026 Majed Maktari</span></div></footer>
+
+<script>
+(function(){
+  function $(id){return document.getElementById(id);}
+  function pressed(btns,el){btns.forEach(function(b){b.setAttribute('aria-pressed',b===el);});}
+  function copyTo(btn,out){
+    $(btn).addEventListener('click',function(){
+      function sel(){var r=document.createRange();r.selectNodeContents($('emailText'));var s=getSelection();s.removeAllRanges();s.addRange(r);$(out).textContent='Selected, press Ctrl+C';}
+      try{navigator.clipboard.writeText('maktarimajed@gmail.com').then(function(){$(out).textContent='Copied';},sel);}catch(e){sel();}
+    });
+  }
+  copyTo('copyEmail','copied');copyTo('copyEmail2','copied2');
+
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  tabs.forEach(function(tb){tb.addEventListener('click',function(){
+    tabs.forEach(function(o){var on=o===tb;o.setAttribute('aria-selected',on);$(o.getAttribute('aria-controls')).hidden=!on;});
+  });});
+
+  var SEM=[
+    {k:'Fall 2023',n:57,inc:23,sr:34,v:16,p:28.1,ch:{techreq:16,phone:13,email:11,tech:8,portal:7,walk:1,other:1}},
+    {k:'Spring 2024',n:89,inc:19,sr:69,v:17,p:19.1,ch:{tech:25,techreq:18,email:12,portal:11,phone:10,other:7,walk:6}},
+    {k:'Summer 2024',n:99,inc:44,sr:54,v:13,p:13.1,ch:{tech:37,techreq:34,email:12,other:7,portal:5,phone:4}},
+    {k:'Fall 2024',n:131,inc:21,sr:110,v:17,p:13.0,ch:{tech:81,techreq:20,email:11,other:9,portal:5,walk:3,phone:2}},
+    {k:'Spring 2025',n:117,inc:17,sr:99,v:11,p:9.4,ch:{tech:44,walk:20,other:13,email:12,portal:12,techreq:9,integ:4,phone:3}},
+    {k:'Summer 2025',n:79,inc:16,sr:63,v:7,p:8.9,ch:{email:18,tech:15,other:13,walk:13,integ:12,techreq:4,portal:3,phone:1}},
+    {k:'Fall 2025',n:201,inc:48,sr:152,v:4,p:2.0,ch:{walk:61,integ:37,other:30,techreq:24,email:21,tech:12,phone:8,portal:8}},
+    {k:'Spring 2026',n:153,inc:50,sr:103,v:1,p:0.7,ch:{integ:42,techreq:25,email:21,walk:18,other:16,tech:15,portal:11,phone:5}}
+  ];
+  var ALL={k:'All semesters',n:926,inc:238,sr:684,v:86,p:9.3,ch:{tech:237,techreq:150,walk:122,email:118,integ:95,portal:62,phone:46,other:96}};
+  var CH=[['tech','Direct to a technician'],['techreq','Technician requested'],['walk','Service desk walk-in'],['email','Email'],['integ','Forms, incl. Quick Ticket'],['portal','Self-service portal'],['phone','Phone'],['other','Other or not recorded']];
+  var sel=-1;
+  function drawCols(id,xid,key,max,fmt,target){
+    var h=SEM.map(function(d,i){
+      var cls='colb'+(sel===i?' on':'')+(key==='p'&&sel<0&&d.p>5?' hot':'');
+      return '<button type="button" class="'+cls+'" data-i="'+i+'" aria-pressed="'+(sel===i)+'" aria-label="'+d.k+': '+fmt(d[key])+'"><span class="v">'+fmt(d[key])+'</span><span class="bar" style="height:'+(d[key]/max*100*0.86)+'%"></span></button>';
+    }).join('');
+    if(target!=null)h+='<div class="target" style="bottom:'+(target/max*100*0.86)+'%"><span>5% target</span></div>';
+    $(id).innerHTML=h;
+    $(xid).innerHTML=SEM.map(function(d){return '<span>'+d.k.replace(' 20',' ’')+'</span>';}).join('');
+  }
+  function renderSvc(){
+    var d=sel<0?ALL:SEM[sel];
+    $('svcStats').innerHTML=
+      '<div class="stat"><b>'+d.n.toLocaleString()+'</b><span>tickets, '+(sel<0?'Sept 2023 to May 2026':d.k)+'</span></div>'+
+      '<div class="stat"><b>'+d.sr+'</b><span>service requests</span></div>'+
+      '<div class="stat"><b>'+d.inc+'</b><span>incidents</span></div>'+
+      '<div class="stat"><b>'+d.p.toFixed(1)+'%</b><span>missed SLA ('+d.v+') </span><em class="'+(d.p>5?'over':'')+'">'+(d.p<=5?'within 5% target':'above 5% target')+'</em></div>';
+    drawCols('tixCols','tixX','n',201,function(v){return v;});
+    drawCols('slaCols','slaX','p',30,function(v){return v.toFixed(1)+'%';},5);
+    $('chanTitle').textContent='How requests reached us, '+(sel<0?'all semesters':d.k);
+    var mx=Math.max.apply(null,CH.map(function(c){return d.ch[c[0]]||0;}));
+    $('chanBars').innerHTML=CH.map(function(c){var v=d.ch[c[0]]||0;
+      return '<div class="hb"><span class="l">'+c[1]+'</span><div class="t"><div class="f'+(c[0]==='other'?' mute':'')+'" style="width:'+(mx?v/mx*100:0)+'%"></div></div><span class="n">'+v+'</span></div>';}).join('');
+    $('svcAll').setAttribute('aria-pressed',sel<0);
+  }
+  ['tixCols','slaCols'].forEach(function(id){$(id).addEventListener('click',function(e){
+    var b=e.target.closest('.colb');if(!b)return;var i=+b.getAttribute('data-i');sel=(sel===i?-1:i);renderSvc();
+  });});
+  $('svcAll').addEventListener('click',function(){sel=-1;renderSvc();});
+  renderSvc();
+
+  var PT={
+    'all':{label:'all five terms',en:24179,pr:13747,ad:56.86,w20:87.98,med:3.60,avg:8.35,r:[74.2,13.7,5.5,2.7,1.8,2.0],c:[12.71,11.87,8.98,7.39,6.92,7.05,6.76,5.50]},
+    'Fall 2024':{label:'Fall 2024',en:5685,pr:3509,ad:61.72,w20:87.97,med:3.60,avg:8.37,r:[75.1,12.9,5.6,2.5,1.8,2.2],c:[12.02,12.53,9.33,7.22,6.09,7.39,6.98,6.57]},
+    'Spring 2025':{label:'Spring 2025',en:5541,pr:3320,ad:59.92,w20:86.87,med:3.75,avg:8.77,r:[72.5,14.3,5.8,3.3,2.1,1.9],c:[17.49,12.41,9.19,8.10,7.40,6.90,6.87,5.76]},
+    'Summer 2025':{label:'Summer 2025',en:1743,pr:316,ad:18.13,w20:92.41,med:1.83,avg:5.70,r:[81.3,11.1,4.4,1.3,0.9,0.9],c:[5.18,5.75,11.22,3.69,4.38,4.53,3.62,3.33]},
+    'Fall 2025':{label:'Fall 2025',en:5879,pr:3512,ad:59.74,w20:87.81,med:3.50,avg:8.39,r:[74.3,13.4,5.4,2.5,1.9,2.3],c:[9.47,12.76,8.12,6.81,8.05,7.75,6.51,3.95]},
+    'Spring 2026':{label:'Spring 2026',en:5331,pr:3090,ad:57.96,w20:88.93,med:3.90,avg:8.08,r:[74.3,14.6,5.2,2.7,1.5,1.7],c:[14.66,10.52,8.86,7.71,6.20,6.20,6.94,5.91]}
+  };
+  var SP=[['$0–10',10],['$10–20',20],['$20–30',30],['$30–40',40],['$40–50',50],['$50+',999]];
+  var COL=['Affiliated programs','Science','Education','Engineering, Tech and CS','Visual and Performing Arts','Liberal Arts','Business','Integrated Studies'];
+  var term='all',allow=$('allow');
+  function k(n){return n>=10000?(n/1000).toFixed(1)+'K':n.toLocaleString();}
+  function renderPrint(){
+    var d=PT[term],a=+allow.value,cov=0;$('allowOut').textContent='$'+a;
+    $('prtStats').innerHTML=
+      '<div class="stat"><b>'+k(d.en)+'</b><span>enrolled student-terms</span></div>'+
+      '<div class="stat"><b>'+d.ad.toFixed(1)+'%</b><span>printed at least once</span></div>'+
+      '<div class="stat"><b>$'+d.med.toFixed(2)+'</b><span>median spend (avg $'+d.avg.toFixed(2)+')</span></div>'+
+      '<div class="stat"><b>'+d.w20.toFixed(2)+'%</b><span>of printers within $20</span></div>';
+    $('spendCols').innerHTML=SP.map(function(s,i){var v=d.r[i],inn=s[1]<=a;if(inn)cov+=v;
+      return '<div class="colb'+(inn?' on':'')+'"><span class="v">'+v.toFixed(1)+'%</span><span class="bar" style="height:'+(v/85*100)+'%"></span></div>';}).join('');
+    $('allowText').innerHTML='At $'+a+' a term, about '+cov.toFixed(1)+'% of students who printed in '+d.label+' would have been fully covered.'+(a===20?' $20 is the recommended allowance, in place from Fall 2026.':'');
+    var mx=Math.max(20,Math.max.apply(null,d.c));
+    $('collegeBars').innerHTML=COL.map(function(c,i){
+      return '<div class="hb"><span class="l">'+c+'</span><div class="t"><div class="f" style="width:'+(d.c[i]/mx*100)+'%"></div></div><span class="n">$'+d.c[i].toFixed(2)+'</span></div>';}).join('');
+  }
+  $('spendX').innerHTML=SP.map(function(s){return '<span>'+s[0]+'</span>';}).join('');
+  allow.addEventListener('input',renderPrint);
+  var termBtns=[].slice.call(document.querySelectorAll('#termSeg .opt'));
+  termBtns.forEach(function(b){b.addEventListener('click',function(){pressed(termBtns,b);term=b.getAttribute('data-t');renderPrint();});});
+  renderPrint();
+
+  var ROOMS=[[1,'104',21,16],[1,'105',5,4],[1,'109',23,15],[1,'111',21,8],[2,'211',1,1],[2,'215',10,10],[2,'219',2,1],[2,'226',16,14],[2,'241',32,28],[2,'244',26,23],
+    [3,'305',13,12],[3,'307',13,13],[3,'311',25,null],[3,'315',25,25],[3,'320',13,null],[3,'324',4,4],[3,'331',8,2],[3,'335',2,1],[3,'339',1,1],[3,'343',3,3],[3,'346',26,19]];
+  function renderRooms(f){
+    var seats=0,peak=0,low=0;
+    $('roomBars').innerHTML=ROOMS.filter(function(r){return !f||r[0]===f;}).map(function(r){
+      var nd=r[3]==null,lw=!nd&&r[3]/r[2]<.6;if(!nd){seats+=r[2];peak+=r[3];if(lw)low++;}
+      return '<div class="cap'+(nd?' nd':'')+'" style="grid-template-columns:4.6rem minmax(0,1fr) 3.8rem"><span class="l">Room '+r[1]+'</span><div style="width:'+(r[2]/32*100)+'%;min-width:6px"><div class="seat"><div class="use'+(lw?' low':'')+'" style="width:'+(nd?0:r[3]/r[2]*100)+'%"></div></div></div><span class="n">'+(nd?'no data':r[3]+' of '+r[2])+'</span></div>';
+    }).join('');
+    $('roomNote').textContent='Across these rooms, '+seats+' seats and a combined peak of '+peak+'. '+low+(low===1?' room':' rooms')+' never got above 60% full.';
+  }
+  var floorBtns=[].slice.call(document.querySelectorAll('#floorSeg .opt'));
+  floorBtns.forEach(function(b){b.addEventListener('click',function(){pressed(floorBtns,b);renderRooms(+b.getAttribute('data-f'));});});
+  renderRooms(0);
+
+  var WK=['8/25','9/1','9/8','9/15','9/22','9/29','10/6','10/13','10/20','10/27','11/3','11/10','11/17','11/24','12/1','12/8','12/15','12/22','12/29','1/5','1/12','1/19','1/26','2/2','2/9','2/16','2/23','3/2','3/9','3/16','3/23','3/30'];
+  var HV={'8/25':[0,1,0,0,0,0,0],'9/22':[0,0,0,19,3,13,4],'9/29':[2,3,1,1,5,24,1],'1/5':[0,0,23,39,35,0,0],'1/12':[0,0,0,0,4,6,1],'1/26':[0,2,0,0,4,4,0],'2/9':[0,0,1,0,1,0,0],'2/23':[0,0,0,0,1,0,0],'3/9':[0,21,23,21,0,0,0],'3/23':[0,0,0,0,7,0,0]};
+  $('weekCols').innerHTML=WK.map(function(w){var v=Math.max.apply(null,HV[w]||[0]),busy=v>=10;
+    return '<div class="colb'+(busy?' on':'')+'" title="Week of '+w+': '+v+' at once"><span class="v">'+(busy?v:'')+'</span><span class="bar" style="height:'+(v?Math.max(v/39*82,3):1.5)+'%"></span></div>';}).join('');
+  $('weekX').innerHTML=WK.map(function(w){return '<span>'+(['8/25','10/20','12/15','2/9','3/30'].indexOf(w)>-1?w:'')+'</span>';}).join('');
+
+  var HALLS=[[7,2],[2,2],[2,2],[2,2],[2,2],[5,2],[2,2],[2,2],[2,2],[8,4],[8,5],[3,2],[3,2],[8,5]];
+  $('hallBars').innerHTML=HALLS.map(function(r,i){var lw=r[1]/r[0]<.6;
+    return '<div class="cap" style="grid-template-columns:3.6rem minmax(0,1fr) 3.4rem"><span class="l">Hall '+String.fromCharCode(65+i)+'</span><div style="width:'+(r[0]/8*100)+'%"><div class="seat"><div class="use'+(lw?' low':'')+'" style="width:'+(r[1]/r[0]*100)+'%"></div></div></div><span class="n">'+r[1]+' of '+r[0]+'</span></div>';
+  }).join('');
+
+  var lensBtns=[].slice.call(document.querySelectorAll('#lenses .chip'));
+  function setLens(l){
+    lensBtns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lens')===l);});
+    ['cases','more'].forEach(function(box){
+      var el=$(box),items=[].slice.call(el.children),a=[],b=[];
+      items.forEach(function(c){var ok=l==='all'||c.getAttribute('data-lenses').split(' ').indexOf(l)>-1;c.hidden=!ok;(ok?a:b).push(c);});
+      a.concat(b).forEach(function(c){el.appendChild(c);});
+    });
+  }
+  lensBtns.forEach(function(b){b.addEventListener('click',function(){var l=b.getAttribute('data-lens');setLens(l);
+    try{history.replaceState(null,'',l==='all'?location.pathname:'#'+l);}catch(e){}});});
+  function fromHash(){var x=location.hash.slice(1);if(['it-management','analytics','projects','systems'].indexOf(x)>-1){setLens(x);}}
+  window.addEventListener('hashchange',fromHash);fromHash();
+
+  /* highlight the current section in the sticky nav */
+  var navLinks=[].slice.call(document.querySelectorAll('.mast nav a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      navLinks.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+    ['work','data','recognition','background','contact'].forEach(function(id){var el=$(id);if(el)io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>
