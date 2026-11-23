@@ -315,6 +315,32 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24p
 .slapair div:last-child{text-align:right}
 .slapair div:last-child b{color:var(--bgold)}
 .slapair span{font-size:.8rem;color:var(--bmid)}
+/* collapsible case rows */
+#cases{gap:10px}
+details.case{display:block;grid-template-columns:none;overflow:hidden}
+details.case > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,17rem) minmax(0,1fr) auto 22px;gap:6px 24px;align-items:center;padding:18px 22px}
+details.case > summary::-webkit-details-marker{display:none}
+details.case > summary:hover .s-title{color:var(--accent)}
+.s-title{font-weight:650;font-size:1.05rem;letter-spacing:-.01em;line-height:1.25}
+.s-line{color:var(--mid);font-size:.92rem;line-height:1.4}
+.s-fig{text-align:right;line-height:1}
+.s-fig b{display:block;font-stretch:66%;font-weight:650;font-size:1.9rem;color:var(--accent)}
+.s-fig small{font-size:.74rem;color:var(--mid)}
+.s-chev{width:10px;height:10px;border-right:2px solid var(--mid);border-bottom:2px solid var(--mid);transform:rotate(45deg);justify-self:center;transition:transform .2s}
+details.case[open] .s-chev{transform:rotate(225deg)}
+details.case[open] > summary{border-bottom:1px solid var(--line)}
+.case-body{display:grid;grid-template-columns:minmax(0,19rem) minmax(0,1fr)}
+.case-tools{display:flex;justify-content:flex-end;margin-bottom:10px}
+.expand-all{font-size:.88rem;color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:760px){
+  details.case > summary{grid-template-columns:minmax(0,1fr) auto 18px;padding:16px}
+  .s-line{grid-column:1/2;grid-row:2}
+  .s-title{grid-column:1/2}
+  .s-fig{grid-row:1/3;grid-column:2}
+  .s-chev{grid-row:1/3;grid-column:3}
+  .s-fig b{font-size:1.6rem}
+  .case-body{grid-template-columns:1fr}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 <script type="text/javascript">
@@ -381,40 +407,52 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24p
   <div class="in">
     <div class="sec-h">
       <div><span class="n">01 · Selected work</span><h2 id="work-h">Challenges, decisions, and results</h2></div>
-      <p>Filter by the kind of role you're hiring for.</p>
+      <p>Click any project to see the problem, the decision and the result.</p>
     </div>
-    <div class="chips" role="group" aria-label="Role type" id="lenses">
-      <button class="chip" type="button" data-lens="all" aria-pressed="true">Everything</button>
-      <button class="chip" type="button" data-lens="it-management" aria-pressed="false">IT and service management</button>
-      <button class="chip" type="button" data-lens="analytics" aria-pressed="false">Analytics and reporting</button>
-      <button class="chip" type="button" data-lens="projects" aria-pressed="false">Projects and implementation</button>
-      <button class="chip" type="button" data-lens="systems" aria-pressed="false">Systems and support</button>
-    </div>
+    <div class="case-tools"><button type="button" class="expand-all" id="expandAll" aria-expanded="false">Expand all</button></div>
     <div id="cases">
-      <article class="case" data-lenses="it-management">
-        <div class="viz"><b class="fig">3.5×</b><p class="figl">more tickets per fall semester, with SLA misses down 97%</p><div class="mbars"><div class="mb"><span>Fall 2023</span><div class="mbt"><div class="mbf mute" style="width:28.4%"></div></div><b>57</b></div><div class="mb"><span>Fall 2025</span><div class="mbt"><div class="mbf " style="width:100%"></div></div><b>201</b></div></div><p class="vizcap"><span>Tickets per fall semester</span></p></div>
-        <div class="txt"><p class="meta">Service delivery · Team leadership</p><h3>Scaling IT Service Delivery</h3><dl class="pcr"><dt>Problem</dt><dd>In October 2023, inconsistent ticketing practices and limited reporting options contributed to a 28% SLA miss rate.</dd><dt>Approach</dt><dd>Standardized ticketing, established a 5% SLA target, introduced Quick Ticket QR codes, and trained approximately 13 technicians.</dd><dt class="res">Result</dt><dd class="res"><b>Ticket volume increased 3.5× while SLA misses dropped to 0.7%.</b> In Fall 2026, consolidated two support groups into one cross-trained team of nine.</dd></dl></div>
-      </article>
-      <article class="case" data-lenses="analytics it-management projects">
-        <div class="viz"><b class="fig">$129,280</b><p class="figl">avoided in the Windows 11 refresh</p><div class="mbars"><div class="mb"><span>Flagged</span><div class="mbt"><div class="mbf mute" style="width:100%"></div></div><b>271</b></div><div class="mb"><span>Bought</span><div class="mbt"><div class="mbf " style="width:52.8%"></div></div><b>143</b></div></div></div>
-        <div class="txt"><p class="meta">Capacity planning · Power BI</p><h3>Smarter Hardware Planning</h3><dl class="pcr"><dt>Problem</dt><dd>A readiness scan flagged 271 computers that couldn't run Windows 11. The default was to replace them all.</dd><dt>Decision</dt><dd>Used peak utilization data to right-size labs, close an underused lab, and retire 15 unnecessary residence hall computers.</dd><dt class="res">Result</dt><dd class="res"><b>Purchased 143 instead of 271 computers.</b> Applied the same approach to future refreshes, prioritizing reuse (70 machines reused, ~80 repurposed).</dd></dl></div>
-      </article>
-      <article class="case" data-lenses="systems it-management analytics">
-        <div class="viz"><b class="fig">$50→$20</b><p class="figl">printing allowance per student</p><div class="mbars"><div class="mb"><span>Before</span><div class="mbt"><div class="mbf mute" style="width:100%"></div></div><b>$50</b></div><div class="mb"><span>Now</span><div class="mbt"><div class="mbf " style="width:40%"></div></div><b>$20</b></div></div><p class="vizcap"><span>Allowance per student, per term</span></p></div>
-        <div class="txt"><p class="meta">Service ownership · PaperCut MF · Windows Server</p><h3>Managing Campus Printing Infrastructure</h3><dl class="pcr"><dt>Scope</dt><dd>Five print servers, about 80 printers, and three co-managed regional servers.</dd><dt>Approach</dt><dd>Led print server migration and consolidation, added Web Print redundancy, improved document processing, and corrected color printing billing errors.</dd><dt>Decision</dt><dd>Analyzed two years of printing data showing 87.98% of students used $20 or less per term. Recommended a lower allowance and standardized rates.</dd><dt class="res">Result</dt><dd class="res"><b>Implemented the new $20 allowance and lower printing rates in Fall 2026.</b></dd></dl></div>
-      </article>
-      <article class="case" data-lenses="systems it-management">
-        <div class="viz"><b class="fig">49</b><p class="figl">failing workstations repaired under Dell warranty</p><div class="dots" style="--c:7" role="img" aria-label="49 of 49 highlighted"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="vizcap"><span>40 processors · 14 main boards</span></p></div>
-        <div class="txt"><p class="meta">Problem management · Vendor management</p><h3>Tracking down Intel 13th and 14th gen failures</h3><dl class="pcr"><dt>Problem</dt><dd>Computers across campus started blue-screening in September 2024.</dd><dt>Approach</dt><dd>Identified Intel processor instability, coordinated BIOS updates, stress-tested affected systems, and managed warranty repairs.</dd><dt class="res">Result</dt><dd class="res"><b>49 machines repaired in six months</b>, including 40 processors and 14 main boards.</dd></dl></div>
-      </article>
-      <article class="case" data-lenses="projects it-management">
-        <div class="viz"><b class="fig">~$52K</b><p class="figl">estimated avoided by keeping 12 of 64 computers</p><div class="dots" style="--c:8" role="img" aria-label="12 of 64 highlighted"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><p class="vizcap"><span>12 of 64 seats kept</span></p></div>
-        <div class="txt"><p class="meta">Learning space design · 2026</p><h3>Redesigning Labs for Modern Learning</h3><dl class="pcr"><dt>Problem</dt><dd>A lab of 64 aging Windows computers was due for replacement, and usage showed most seats sat empty.</dd><dt>Decision</dt><dd>Reduced 64 workstations to 12 Windows, Mac, and high-performance systems, adding collaborative spaces and the campus's first single-cable BYOD stations.</dd><dt class="res">Result</dt><dd class="res"><b>Opened Spring 2026 and featured in <a href="https://www.pfw.edu/news-center/refurbished-kettler-computer-lab-offers-new-options" target="_blank" rel="noopener">PFW News</a>.</b> Also delivered a ~$56K interior design classroom and 21-seat Mac audio lab.</dd></dl></div>
-      </article>
-      <article class="case" data-lenses="projects it-management systems">
-        <div class="viz"><b class="fig">$21,801</b><p class="figl">saved on a 22-seat esports lab</p><div class="mbars"><div class="mb"><span>Alienware quote</span><div class="mbt"><div class="mbf mute" style="width:100%"></div></div><b>$74.4K</b></div><div class="mb"><span>Dell, ordered</span><div class="mbt"><div class="mbf " style="width:70.7%"></div></div><b>$52.6K</b></div></div><p class="vizcap"><span>22-seat esports lab</span></p></div>
-        <div class="txt"><p class="meta">Spend and vendor management</p><h3>Smarter IT Procurement</h3><dl class="pcr"><dt>Scope</dt><dd>Manage approximately $200K in annual equipment planning, procurement, and warranty coordination.</dd><dt>Decision</dt><dd>Selected comparable Dell Pro Max workstations at $2,392 instead of $3,383 Alienware systems.</dd><dt class="res">Result</dt><dd class="res"><b>Reduced workstation costs by 29% without sacrificing performance.</b></dd></dl></div>
-      </article>
+      <details class="case">
+        <summary><span class="s-title">Scaling IT Service Delivery</span><span class="s-line">Standardized ticketing and launched QR intake</span><span class="s-fig"><b>97.5%</b><small>fewer SLA misses</small></span><span class="s-chev" aria-hidden="true"></span></summary>
+        <div class="case-body">
+          <div class="viz"><b class="fig">3.5×</b><p class="figl">more tickets per fall semester, with SLA misses down 97%</p><div class="mbars"><div class="mb"><span>Fall 2023</span><div class="mbt"><div class="mbf mute" style="width:28.4%"></div></div><b>57</b></div><div class="mb"><span>Fall 2025</span><div class="mbt"><div class="mbf " style="width:100%"></div></div><b>201</b></div></div><p class="vizcap"><span>Tickets per fall semester</span></p></div>
+          <div class="txt"><p class="meta">Service delivery · Team leadership</p><dl class="pcr"><dt>Problem</dt><dd>In October 2023, inconsistent ticketing practices and limited reporting options contributed to a 28% SLA miss rate.</dd><dt>Approach</dt><dd>Standardized ticketing, established a 5% SLA target, introduced Quick Ticket QR codes, and trained approximately 13 technicians.</dd><dt class="res">Result</dt><dd class="res"><b>Ticket volume increased 3.5× while SLA misses dropped to 0.7%.</b> In Fall 2026, consolidated two support groups into one cross-trained team of nine.</dd></dl></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="s-title">Smarter Hardware Planning</span><span class="s-line">Used readiness scans and usage data to right-size a Windows 11 refresh</span><span class="s-fig"><b>$129,280</b><small>avoided</small></span><span class="s-chev" aria-hidden="true"></span></summary>
+        <div class="case-body">
+          <div class="viz"><b class="fig">$129,280</b><p class="figl">avoided in the Windows 11 refresh</p><div class="mbars"><div class="mb"><span>Flagged</span><div class="mbt"><div class="mbf mute" style="width:100%"></div></div><b>271</b></div><div class="mb"><span>Bought</span><div class="mbt"><div class="mbf " style="width:52.8%"></div></div><b>143</b></div></div></div>
+          <div class="txt"><p class="meta">Capacity planning · Power BI</p><dl class="pcr"><dt>Problem</dt><dd>A readiness scan flagged 271 computers that couldn't run Windows 11. The default was to replace them all.</dd><dt>Decision</dt><dd>Used peak utilization data to right-size labs, close an underused lab, and retire 15 unnecessary residence hall computers.</dd><dt class="res">Result</dt><dd class="res"><b>Purchased 143 instead of 271 computers.</b> Applied the same approach to future refreshes, prioritizing reuse (70 machines reused, ~80 repurposed).</dd></dl></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="s-title">Managing Campus Printing Infrastructure</span><span class="s-line">Run 5 print servers; data-backed allowance change</span><span class="s-fig"><b>$50→$20</b><small>allowance</small></span><span class="s-chev" aria-hidden="true"></span></summary>
+        <div class="case-body">
+          <div class="viz"><b class="fig">$50→$20</b><p class="figl">printing allowance per student</p><div class="mbars"><div class="mb"><span>Before</span><div class="mbt"><div class="mbf mute" style="width:100%"></div></div><b>$50</b></div><div class="mb"><span>Now</span><div class="mbt"><div class="mbf " style="width:40%"></div></div><b>$20</b></div></div><p class="vizcap"><span>Allowance per student, per term</span></p></div>
+          <div class="txt"><p class="meta">Service ownership · PaperCut MF · Windows Server</p><dl class="pcr"><dt>Scope</dt><dd>Five print servers, about 80 printers, and three co-managed regional servers.</dd><dt>Approach</dt><dd>Led print server migration and consolidation, added Web Print redundancy, improved document processing, and corrected color printing billing errors.</dd><dt>Decision</dt><dd>Analyzed two years of printing data showing 87.98% of students used $20 or less per term. Recommended a lower allowance and standardized rates.</dd><dt class="res">Result</dt><dd class="res"><b>Implemented the new $20 allowance and lower printing rates in Fall 2026.</b></dd></dl></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="s-title">Tracking down Intel 13th and 14th gen failures</span><span class="s-line">Traced Intel 13th/14th gen failures and managed warranty repairs</span><span class="s-fig"><b>49</b><small>machines repaired</small></span><span class="s-chev" aria-hidden="true"></span></summary>
+        <div class="case-body">
+          <div class="viz"><b class="fig">49</b><p class="figl">failing workstations repaired under Dell warranty</p><div class="dots" style="--c:7" role="img" aria-label="49 of 49 highlighted"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><p class="vizcap"><span>40 processors · 14 main boards</span></p></div>
+          <div class="txt"><p class="meta">Problem management · Vendor management</p><dl class="pcr"><dt>Problem</dt><dd>Computers across campus started blue-screening in September 2024.</dd><dt>Approach</dt><dd>Identified Intel processor instability, coordinated BIOS updates, stress-tested affected systems, and managed warranty repairs.</dd><dt class="res">Result</dt><dd class="res"><b>49 machines repaired in six months</b>, including 40 processors and 14 main boards.</dd></dl></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="s-title">Redesigning Labs for Modern Learning</span><span class="s-line">Rebuilt a 64-seat lab around 12 computers and BYOD</span><span class="s-fig"><b>~$52K</b><small>avoided</small></span><span class="s-chev" aria-hidden="true"></span></summary>
+        <div class="case-body">
+          <div class="viz"><b class="fig">~$52K</b><p class="figl">estimated avoided by keeping 12 of 64 computers</p><div class="dots" style="--c:8" role="img" aria-label="12 of 64 highlighted"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><p class="vizcap"><span>12 of 64 seats kept</span></p></div>
+          <div class="txt"><p class="meta">Learning space design · 2026</p><dl class="pcr"><dt>Problem</dt><dd>A lab of 64 aging Windows computers was due for replacement, and usage showed most seats sat empty.</dd><dt>Decision</dt><dd>Reduced 64 workstations to 12 Windows, Mac, and high-performance systems, adding collaborative spaces and the campus's first single-cable BYOD stations.</dd><dt class="res">Result</dt><dd class="res"><b>Opened Spring 2026 and featured in <a href="https://www.pfw.edu/news-center/refurbished-kettler-computer-lab-offers-new-options" target="_blank" rel="noopener">PFW News</a>.</b> Also delivered a ~$56K interior design classroom and 21-seat Mac audio lab.</dd></dl></div>
+        </div>
+      </details>
+      <details class="case">
+        <summary><span class="s-title">Smarter IT Procurement</span><span class="s-line">Matched performance with lower-cost workstations</span><span class="s-fig"><b>$21,801</b><small>saved</small></span><span class="s-chev" aria-hidden="true"></span></summary>
+        <div class="case-body">
+          <div class="viz"><b class="fig">$21,801</b><p class="figl">saved on a 22-seat esports lab</p><div class="mbars"><div class="mb"><span>Alienware quote</span><div class="mbt"><div class="mbf mute" style="width:100%"></div></div><b>$74.4K</b></div><div class="mb"><span>Dell, ordered</span><div class="mbt"><div class="mbf " style="width:70.7%"></div></div><b>$52.6K</b></div></div><p class="vizcap"><span>22-seat esports lab</span></p></div>
+          <div class="txt"><p class="meta">Spend and vendor management</p><dl class="pcr"><dt>Scope</dt><dd>Manage approximately $200K in annual equipment planning, procurement, and warranty coordination.</dd><dt>Decision</dt><dd>Selected comparable Dell Pro Max workstations at $2,392 instead of $3,383 Alienware systems.</dd><dt class="res">Result</dt><dd class="res"><b>Reduced workstation costs by 29% without sacrificing performance.</b></dd></dl></div>
+        </div>
+      </details>
     </div>
     <h3 class="more-h">Also</h3>
     <div class="more" id="more">
@@ -769,6 +807,13 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24p
       navLinks.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-45% 0px -50% 0px'});
     ['work','data','recognition','background','contact'].forEach(function(id){var el=$(id);if(el)io.observe(el);});
   }
+
+  var exp=document.getElementById('expandAll');
+  if(exp){exp.addEventListener('click',function(){
+    var open=exp.getAttribute('aria-expanded')!=='true';
+    [].forEach.call(document.querySelectorAll('#cases details.case'),function(d){d.open=open;});
+    exp.setAttribute('aria-expanded',open);exp.textContent=open?'Collapse all':'Expand all';
+  });}
 })();
 </script>
 </body>
